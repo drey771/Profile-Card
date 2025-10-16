@@ -27,7 +27,7 @@ A responsive profile card built with HTML and CSS. The layout adjusts based on s
 
 ## How to Run
 
-Just open https://drey771.github.io/Profile-Card/ file in any browser.
+Just open https://drey771.github.io/Profile-Card/ in any browser.
 
 ## Future Improvements
 
