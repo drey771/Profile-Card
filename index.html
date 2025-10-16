@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Card</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <main class="profile-card" data-testid="test-profile-card">
+    <img src="pp.JPG" alt="Profile Picture" class="profile-img" data-testid="test-user-avatar">
+    
+    <article class="profile-info">
+      <h2 class="name" data-testid="test-user-name">Babatunde Damilare</h2>
+      <p class="time" data-testid="test-user-time"></p>
+      <p class="bio" data-testid="test-user-bio">
+        B.Tech Computer Science | Aspiring Frontend Developer | Tech Enthusiast | Web3 Explorer | ChelseaFC Fan
+      </p>
+
+      <div class="sections">
+        <section class="hobbies" data-testid="test-user-hobbies">
+            <h4>Hobbies:</h4>
+            <ul>
+              <li>Coding</li>
+              <li>Gaming</li>
+              <li>Sleeping</li>
+            </ul>
+          </section>
+    
+          <section class="hobbies" data-testid="test-user-dislikes">
+            <h4>Dislikes:</h4>
+            <ul>
+              <li>Man Utd & Barcelona</li>
+              <li>Pizza</li>
+              <li>Over Thinker</li>
+            </ul>
+          </section>
+      </div>
+
+      <div class="social-links" data-testid="test-user-social-links">
+        <a href="https://x.com/adejustin771" target="_blank" data-testid="test-user-social-twitter">Twitter</a>
+        <a href="#" target="_blank" data-testid="test-user-social-facebook">Facebook</a>
+        <a href="#" target="https://github.com/drey771" data-testid="test-user-social-github">GitHub</a>
+      </div>
+
+    </article>
+  </main>
+
+
+  <script>
+    // Function to update the time every second
+    function updateTime() {
+      const currentTime = document.querySelector('.time');
+      const now = new Date();
+      const options = { hour: '2-digit', minute: '2-digit', second: '2-digit' };
+      currentTime.textContent = now.toLocaleTimeString([], options);
+    }
+
+    updateTime(); //function call
+    
+    setInterval(updateTime, 1000); // Update the time every second
+  </script>
+</body>
+</html>

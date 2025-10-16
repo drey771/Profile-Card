@@ -1,0 +1,113 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+  }
+  
+  .profile-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 550px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Profile image */
+  .profile-img {
+    width: 200px;
+    height: 320px;
+    border-radius: 5%;
+    object-fit: cover;
+  }
+  
+  .profile-info .name {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+  }
+  
+  .profile-info .time {
+    color: #555;
+    margin-bottom: 10px;
+  }
+  
+  .profile-info .bio {
+    color: #777;
+    margin-bottom: 15px;
+  }
+
+  .sections{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .hobbies {
+    margin-bottom: 10px;
+  }
+  .hobbies h4 {
+    margin-bottom: 5px;
+    font-size: 1rem;
+  }
+  .hobbies ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    color: #555;
+  }
+  
+  .social-links {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+  .social-links a {
+    text-decoration: none;
+    font-size: 0.9rem;
+    color: #0077ff;
+  }
+  .social-links a:hover {
+    text-decoration: underline;
+    color: #1bb1c5;
+  }
+  
+  /* ✅ Responsive stacking on mobile */
+  @media (max-width: 600px) {
+    .profile-card {
+      flex-direction: column;
+      text-align: center;
+    }
+    .profile-img {
+      margin-bottom: 15px;
+      width: 150px;
+      height: 200px;
+    }
+    .social-links {
+      justify-content: center;
+    }
+    .hobbies ul {
+        list-style-type: none;
+        margin-left: 0;
+    }
+
+    .sections{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        text-align: start;
+        gap: 10px;
+    }
+  }
+  
