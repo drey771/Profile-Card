@@ -1,25 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Profile Card</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile Card</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="profile-card" data-testid="test-profile-card">
+      <img
+        src="https://res.cloudinary.com/drey/image/upload/v1760658324/pp_n1k5sb.jpg"
+        alt="Profile Picture"
+        class="profile-img"
+        data-testid="test-user-avatar"
+      />
 
-  <main class="profile-card" data-testid="test-profile-card">
-    <img src="https://res.cloudinary.com/drey/image/upload/v1760658324/pp_n1k5sb.jpg" alt="Profile Picture" class="profile-img" data-testid="test-user-avatar">
-    
-    <article class="profile-info">
-      <h2 class="name" data-testid="test-user-name">Babatunde Damilare</h2>
-      <p class="time" data-testid="test-user-time"></p>
-      <p class="bio" data-testid="test-user-bio">
-        B.Tech Computer Science | Aspiring Frontend Developer | Tech Enthusiast | Web3 Explorer | ChelseaFC
-      </p>
+      <article class="profile-info">
+        <h2 class="name" data-testid="test-user-name">Babatunde Damilare</h2>
+        <p class="time" data-testid="test-user-time"></p>
+        <p class="bio" data-testid="test-user-bio">
+          B.Tech Computer Science | Aspiring Frontend Developer | Tech
+          Enthusiast | Web3 Explorer | ChelseaFC
+        </p>
 
-      <div class="sections">
-        <section class="hobbies" data-testid="test-user-hobbies">
+        <div class="sections">
+          <section class="hobbies" data-testid="test-user-hobbies">
             <h4>Hobbies:</h4>
             <ul>
               <li>Coding</li>
@@ -27,7 +32,7 @@
               <li>Sleeping</li>
             </ul>
           </section>
-    
+
           <section class="hobbies" data-testid="test-user-dislikes">
             <h4>Dislikes:</h4>
             <ul>
@@ -36,30 +41,41 @@
               <li>Over Thinker</li>
             </ul>
           </section>
-      </div>
+        </div>
 
-      <div class="social-links" data-testid="test-user-social-links">
-        <a href="https://x.com/adejustin771" target="_blank" data-testid="test-user-social-twitter">Twitter</a>
-        <a href="#" target="_blank" data-testid="test-user-social-facebook">Facebook</a>
-        <a href="#" target="https://github.com/drey771" data-testid="test-user-social-github">GitHub</a>
-      </div>
+        <div class="social-links" data-testid="test-user-social-links">
+          <a
+            href="https://x.com/adejustin771"
+            target="_blank"
+            data-testid="test-user-social-twitter"
+            >Twitter</a
+          >
+          <a href="#" target="_blank" data-testid="test-user-social-facebook"
+            >Facebook</a
+          >
+          <a
+            href="#"
+            target="https://github.com/drey771"
+            data-testid="test-user-social-github"
+            >GitHub</a
+          >
+        </div>
+      </article>
+    </main>
 
-    </article>
-  </main>
+    <script>
+      // Function to update the time every second
+      function updateTime() {
+        const currentTime = document.querySelector(".time");
+        const now = new Date();
+        currentTime.textContent =
+          now.toLocaleTimeString([], { hour12: false }) +
+          ":" +
+          now.getMilliseconds();
+      }
 
-
-  <script>
-    // Function to update the time every second
-   function updateTime() {
-  const currentTime = document.querySelector('.time');
-  const now = new Date();
-  currentTime.textContent = now.toLocaleTimeString([], { hour12: false }) + ':' + now.getMilliseconds();
-}
-
-updateTime(); // initial call
-
-// update more frequently so milliseconds actually change in real time
-setInterval(updateTime, 50); 
-  </script>
-</body>
+      updateTime(); 
+      setInterval(updateTime, 50);
+    </script>
+  </body>
 </html>
