@@ -50,16 +50,16 @@
 
   <script>
     // Function to update the time every second
-    function updateTime() {
-      const currentTime = document.querySelector('.time');
-      const now = new Date();
-      const options = { hour: '2-digit', minute: '2-digit', second: '2-digit' };
-      currentTime.textContent = now.toLocaleTimeString([], options);
-    }
+   function updateTime() {
+  const currentTime = document.querySelector('.time');
+  const now = new Date();
+  currentTime.textContent = now.toLocaleTimeString([], { hour12: false }) + ':' + now.getMilliseconds();
+}
 
-    updateTime(); //function call
-    
-    setInterval(updateTime, 1000); // Update the time every second
+updateTime(); // initial call
+
+// update more frequently so milliseconds actually change in real time
+setInterval(updateTime, 50); 
   </script>
 </body>
 </html>
