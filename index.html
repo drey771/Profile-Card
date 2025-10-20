@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <nav class="navbar">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
     <main class="profile-card" data-testid="test-profile-card">
       <img
         src="https://res.cloudinary.com/drey/image/upload/v1760658324/pp_n1k5sb.jpg"
@@ -63,19 +68,6 @@
       </article>
     </main>
 
-    <script>
-      // Function to update the time every second
-      function updateTime() {
-        const currentTime = document.querySelector(".time");
-        const now = new Date();
-        currentTime.textContent =
-          now.toLocaleTimeString([], { hour12: false }) +
-          ":" +
-          now.getMilliseconds();
-      }
-
-      updateTime(); 
-      setInterval(updateTime, 50);
-    </script>
+    <script src="/script.js"></script>
   </body>
 </html>
