@@ -17,23 +17,28 @@ const form = document.getElementById("contactForm");
 const successMessage = document.getElementById("successMessage");
 
 // Listen for form submit
-form.addEventListener("submit", function (event) {
-  event.preventDefault(); // Stop page reload
+form.addEventListener("submit",  (e) => {
+  e.preventDefault(); // Stop page reload
 
   // Get input values
   const name = document.getElementById("name").value.trim();
   const email = document.getElementById("email").value.trim();
   const message = document.getElementById("message").value.trim();
 
-  // Basic validation
+
   if (name === "" || email === "" || message === "") {
     alert("Please fill in all fields before submitting.");
+    return;
+  }
+
+  if (!email.includes("@")) {
+    alert("email must include @");
     return;
   }
 
   // If everything is filled, show success message
   successMessage.style.display = "block";
 
-  // Clear form inputs
+  // clears all form fields after successful submission
   form.reset();
 });
