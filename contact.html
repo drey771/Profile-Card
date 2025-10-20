@@ -19,23 +19,49 @@
       <!-- The form uses a simple ID so our JS can target it -->
       <form id="contactForm">
         <label for="name">Name:</label>
-        <input type="text" id="name" placeholder="Enter your name" />
+        <input
+          type="text"
+          id="name"
+          placeholder="Enter your full name"
+          data-testid="test-contact-name"
+        />
 
         <label for="email">Email:</label>
-        <input type="email" id="email" placeholder="Enter your email" />
+        <input
+          type="email"
+          id="email"
+          placeholder="Enter your email"
+          data-testid="test-contact-email"
+        />
+
+        <label for="subject">Subject:</label>
+        <input
+          type="text"
+          id="subject"
+          placeholder="Message Subject"
+          data-testid="test-contact-subject"
+        />
 
         <label for="message">Message:</label>
         <textarea
           id="message"
           placeholder="Write your message"
           minlength="10"
+          data-testid="test-contact-message"
         ></textarea>
 
-        <button type="submit">Send Message</button>
+        <button type="submit" data-testid="test-contact-submit">
+          Send Message
+        </button>
       </form>
 
       <!-- ✅ Success message (hidden by default) -->
-      <p id="successMessage" class="success-message" style="display: none">
+      <p
+        id="successMessage"
+        class="success-message"
+        style="display: none"
+        data-testid="test-contact-success"
+      >
         ✅ Your message has been sent successfully!
       </p>
     </section>

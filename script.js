@@ -11,22 +11,21 @@
       updateTime(); 
       setInterval(updateTime, 50);
 
-
-      // Get form and elements
+// Get form and elements
 const form = document.getElementById("contactForm");
 const successMessage = document.getElementById("successMessage");
 
-// Listen for form submit
 form.addEventListener("submit",  (e) => {
-  e.preventDefault(); // Stop page reload
+  e.preventDefault();
 
   // Get input values
   const name = document.getElementById("name").value.trim();
   const email = document.getElementById("email").value.trim();
   const message = document.getElementById("message").value.trim();
+  const subject = document.getElementById("subject").value.trim();
 
 
-  if (name === "" || email === "" || message === "") {
+  if (name === "" || email === "" || message === "" || subject === "") {
     alert("Please fill in all fields before submitting.");
     return;
   }
