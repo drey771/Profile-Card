@@ -15,7 +15,6 @@ document.addEventListener("DOMContentLoaded", () => {
   form.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    // Get form fields
     const fields = [
       { id: "name", name: "Name" },
       { id: "email", name: "Email" },
@@ -50,7 +49,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    // If any error, stop submission
     if (hasError) return;
 
     // Success
