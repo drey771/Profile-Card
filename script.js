@@ -6,37 +6,61 @@ function updateTime() {
     now.toLocaleTimeString([], { hour12: true }) + ":" + now.getMilliseconds();
 }
 
-updateTime();
 setInterval(updateTime, 50);
 
-// Get form and elements
-const form = document.getElementById("contactForm");
-const successMessage = document.getElementById("successMessage");
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("contactForm");
+  const successMessage = document.getElementById("successMessage");
 
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
 
-  // Get input values
-  const name = document.getElementById("name").value.trim();
-  const email = document.getElementById("email").value.trim();
-  const message = document.getElementById("message").value.trim();
-  const subject = document.getElementById("subject").value.trim();
+    // Get form fields
+    const fields = [
+      { id: "name", name: "Name" },
+      { id: "email", name: "Email" },
+      { id: "subject", name: "Subject" },
+      { id: "message", name: "Message" }
+    ];
 
-  if (name === "" || email === "" || message === "" || subject === "") {
-    alert("Please fill in all fields before submitting.");
-    return;
-  }
+    let hasError = false;
 
-  if (!email.includes("@")) {
-    alert("email must include @");
-    return;
-  }
+    // Clear old errors
+    fields.forEach(({ id }) => {
+      const input = document.getElementById(id);
+      const errorEl = document.getElementById(id + "Error");
+      input.classList.remove("error-border");
+      errorEl.textContent = "";
+    });
 
-  console`.log("Form submitted:", { name, email, subject, message });`;
+    // Validate each field
+    fields.forEach(({ id, name }) => {
+      const input = document.getElementById(id);
+      const errorEl = document.getElementById(id + "Error");
+      const value = input.value.trim();
 
-  // If everything is filled, show success message
-  successMessage.style.display = "block";
+      if (value === "") {
+        errorEl.textContent = `${name} is required.`;
+        input.classList.add("error-border");
+        hasError = true;
+      } else if (id === "email" && !value.includes("@")) {
+        errorEl.textContent = "Please enter a valid email.";
+        input.classList.add("error-border");
+        hasError = true;
+      }
+    });
 
-  // clears all form fields after successful submission
-  form.reset();
+    // If any error, stop submission
+    if (hasError) return;
+
+    // Success
+    console.log("Form submitted successfully!");
+    successMessage.style.display = "block";
+    form.reset();
+
+    // Hide success after a few seconds
+    setTimeout(() => {
+      successMessage.style.display = "none";
+    }, 3000);
+  });
 });
