@@ -217,3 +217,33 @@ textarea.error-border {
     gap: 10px;
   }
 }
+/* (Tablet view) */
+@media (min-width: 601px) and (max-width: 900px) {
+  .profile-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .profile-img {
+    margin-bottom: 15px;
+    width: 180px;
+    height: 250px;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+
+  .hobbies ul {
+    list-style-type: none;
+    margin-left: 0;
+  }
+
+  .sections {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: start;
+    gap: 20px;
+  }
+}
